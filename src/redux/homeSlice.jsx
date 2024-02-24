@@ -12,10 +12,11 @@ const initialState = {
 export const fetchRestaurantListAsync = createAsyncThunk(
   "home/fetchRestaurantListAsync",
   async ({ searchQuery }, { rejectWithValue }) => {
+    let url = `${BASE_URL}/restaurant`;
+
+    if (searchQuery) url += `?search=${searchQuery}`;
     try {
-      const response = await axios.get(
-        `${BASE_URL}/restaurant?search=${searchQuery}`
-      );
+      const response = await axios.get(`${url}`);
       console.log(response);
       if (response.status === 200) {
         return response.data;

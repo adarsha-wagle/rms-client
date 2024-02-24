@@ -9,6 +9,7 @@ import SearchBarStandard from "src/component/search_bar/search_bar_standard";
 import RenderRestaurantList from "./render_restaurant_list";
 import useDebounce from "src/hooks/useDebounce";
 import { useRouter } from "src/hooks/useRouter";
+import { addHyphen } from "src/utils/add_hyphen";
 
 function FirstSectionRestaurantMenu() {
   const dispatch = useDispatch();
@@ -28,7 +29,8 @@ function FirstSectionRestaurantMenu() {
   }, [debouncedSearchQuery]);
 
   const goToShowRestaurantMenuPage = (userName) => {
-    router.push(`restaurant/show/${userName}`);
+    const lowerCaseTitle = addHyphen(userName);
+    router.push(`restaurant/show/${lowerCaseTitle}`);
   };
 
   return (

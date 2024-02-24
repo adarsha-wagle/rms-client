@@ -17,7 +17,7 @@ export default function RestaurantCard({
   return (
     <Card sx={{ maxWidth: 300, minWidth: 250 }}>
       <CardActionArea
-        onClick={() => goToShowRestaurantMenuPage(restaurant?.username)}
+        onClick={() => goToShowRestaurantMenuPage(restaurant?.name)}
       >
         <CardMedia
           component="img"

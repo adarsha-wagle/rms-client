@@ -24,7 +24,9 @@ export const fetchShowCategoryList = createAsyncThunk(
   "restaurantMenu/fetchShowCategoryList",
   async ({ userName }, { rejectWithValue }) => {
     try {
-      const response = await axios.get(`${BASE_URL}/menu/${userName}`);
+      const response = await axios.get(
+        `${BASE_URL}/restaurant/${userName}/menu`
+      );
       if (response.status === 200) {
         return response.data;
       }

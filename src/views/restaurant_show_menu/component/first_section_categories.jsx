@@ -47,14 +47,29 @@ function FirstSectionCategories({ setSelectedCategoryFoodList }) {
   }
 
   return (
-    <Box sx={{ width: "100%", overflowX: "auto", whiteSpace: "nowrap" }}>
+    <Box
+      sx={{
+        width: "100%",
+        overflowX: "auto",
+        whiteSpace: "nowrap",
+        borderLeft: "2px solid orange",
+        borderRight: "2px solid orange",
+        borderRadius: "1rem",
+      }}
+    >
       {categoryList?.map((item) => {
         return (
           <Button
             key={item?._id}
             variant="text"
             onClick={() => handleCategoryChange(item)}
-            sx={{ textTransform: "capitalize", padding: "0", color: "black" }}
+            sx={{
+              textTransform: "capitalize",
+              padding: "0",
+              color: "black",
+              fontSize: "15px",
+              mx: "0.25rem",
+            }}
             size="small"
             className={selectedCategory === item?.name ? "underline" : ""}
           >

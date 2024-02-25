@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 import { Typography, Box } from "@mui/material";
 
 import { fetchOrderStatusAsync } from "src/redux/navSlice";
@@ -28,12 +29,18 @@ function NavBar() {
             mt: "1rem",
           }}
         >
-          <Typography
-            variant="h4"
-            sx={{ textAlign: "center", fontWeight: "bold" }}
-          >
-            Restaurant Menu
-          </Typography>
+          <Link to="/" style={{ textDecoration: "none" }}>
+            <Typography
+              variant="h4"
+              sx={{
+                textAlign: "center",
+                fontWeight: "bold",
+                color: "black",
+              }}
+            >
+              Restaurant Menu
+            </Typography>
+          </Link>
           <Box
             sx={{
               display: "flex",

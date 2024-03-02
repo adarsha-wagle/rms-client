@@ -13,3 +13,6 @@ Currently, two official plugins are available:
 # Quick Start
 - npm i
 - npm run dev
+
+# Deploy
+https://rms-client-delta.vercel.app/

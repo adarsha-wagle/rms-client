@@ -1,5 +1,6 @@
 import React from "react";
-import { Box, CircularProgress, Typography } from "@mui/material";
+import { Box, Typography } from "@mui/material";
+import ShowLoader from "../ui/show_loader";
 function ShowLoaderError({ isLoading, dataList }) {
   const showLoading = (
     <Box
@@ -11,7 +12,7 @@ function ShowLoaderError({ isLoading, dataList }) {
         width: "100%",
       }}
     >
-      <CircularProgress />
+      <ShowLoader />
     </Box>
   );
   const showError = (

@@ -17,8 +17,8 @@ function FirstSectionRestaurantMenu() {
 
   const [searchQuery, setSearchQuery] = useState("");
 
-  const isRestaurantLoading = useSelector(
-    (state) => state.home.isRestaurantLoading
+  const isRestaurantListLoading = useSelector(
+    (state) => state.home.isRestaurantListLoading
   );
   const restaurantList = useSelector((state) => state.home.restaurantList);
 
@@ -41,7 +41,7 @@ function FirstSectionRestaurantMenu() {
       />
       <RenderRestaurantList
         restaurantList={restaurantList}
-        isRestaurantLoading={isRestaurantLoading}
+        isRestaurantListLoading={isRestaurantListLoading}
         goToShowRestaurantMenuPage={goToShowRestaurantMenuPage}
       />
     </Box>

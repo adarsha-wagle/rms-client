@@ -7,13 +7,13 @@ import ShowLoaderError from "src/component/show_loader_error/show_loader_error";
 
 function RenderRestaurantList({
   restaurantList,
-  isRestaurantLoading,
+  isRestaurantListLoading,
   goToShowRestaurantMenuPage,
 }) {
   return (
     <Box>
       <ShowLoaderError
-        isLoading={isRestaurantLoading}
+        isLoading={isRestaurantListLoading}
         dataList={restaurantList}
       />
       <Grid container spacing={2}>

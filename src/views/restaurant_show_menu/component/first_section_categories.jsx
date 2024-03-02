@@ -9,6 +9,7 @@ import {
   fetchCategoryList,
   fetchShowCategoryList,
 } from "src/redux/restaurantMenuSlice";
+import ShowLoader from "src/component/ui/show_loader";
 
 function FirstSectionCategories({ setSelectedCategoryFoodList }) {
   const dispatch = useDispatch();
@@ -19,6 +20,9 @@ function FirstSectionCategories({ setSelectedCategoryFoodList }) {
 
   const categoryList = useSelector(
     (state) => state.restaurantMenu.categoryList
+  );
+  const isShowCategoryListLoading = useSelector(
+    (state) => state.restaurantMenu.isShowCategoryListLoading
   );
 
   useEffect(() => {
@@ -38,7 +42,11 @@ function FirstSectionCategories({ setSelectedCategoryFoodList }) {
     setSelectedCategoryFoodList(item?.items);
   }
 
-  if (categoryList?.length === 0) {
+  if (isShowCategoryListLoading) {
+    return <ShowLoader />;
+  }
+
+  if (categoryList?.length === 0 && !isShowCategoryListLoading) {
     return (
       <Box>
         <Typography variant="h4">Not Added yet</Typography>

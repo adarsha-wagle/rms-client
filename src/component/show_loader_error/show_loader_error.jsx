@@ -33,7 +33,7 @@ function ShowLoaderError({ isLoading, dataList }) {
   return (
     <>
       {isLoading && showLoading}
-      {dataList.length === 0 && showError}
+      {dataList.length === 0 && !isLoading && showError}
     </>
   );
 }

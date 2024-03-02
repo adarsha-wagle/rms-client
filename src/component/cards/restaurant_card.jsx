@@ -15,7 +15,7 @@ export default function RestaurantCard({
   goToShowRestaurantMenuPage,
 }) {
   return (
-    <Card sx={{ maxWidth: 300, minWidth: 250 }}>
+    <Card sx={{ maxWidth: { xs: "100%", sm: 300 }, minWidth: 250 }}>
       <CardActionArea
         onClick={() => goToShowRestaurantMenuPage(restaurant?.name)}
       >

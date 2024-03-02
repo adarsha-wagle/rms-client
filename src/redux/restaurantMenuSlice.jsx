@@ -104,6 +104,7 @@ const restaurantMenuSlice = createSlice({
       state.categoryListError = action.payload;
     });
     builder.addCase(fetchShowCategoryList.pending, (state) => {
+      state.categoryList = [];
       state.isShowCategoryListLoading = true;
     });
     builder.addCase(fetchShowCategoryList.fulfilled, (state, action) => {
@@ -114,6 +115,7 @@ const restaurantMenuSlice = createSlice({
     });
     builder.addCase(fetchShowCategoryList.rejected, (state, action) => {
       state.isShowCategoryListLoading = false;
+      state.categoryList = [];
       state.showCategoryListError = action.payload;
     });
 

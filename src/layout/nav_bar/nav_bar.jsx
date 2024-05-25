@@ -1,12 +1,13 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Link } from "react-router-dom";
-import { Typography, Box } from "@mui/material";
+import { Link, useLocation } from "react-router-dom";
+import { Typography, Box, Container } from "@mui/material";
 
 import { fetchOrderStatusAsync } from "src/redux/navSlice";
 
 function NavBar() {
   const dispatch = useDispatch();
+  const { pathname } = useLocation();
   const orderedStatus = useSelector((state) => state.nav.orderedStatus);
 
   useEffect(() => {
@@ -20,9 +21,11 @@ function NavBar() {
     }
   }, [dispatch, orderedStatus]);
 
+  const isFeedbackRoute = pathname.startsWith("/feedback");
+
   return (
     <nav>
-      <Box>
+      <Container maxWidth="xl">
         <Box
           sx={{
             mt: "1rem",
@@ -59,7 +62,31 @@ function NavBar() {
             Ordered Status : {orderedStatus}
           </Typography>
         )}
-      </Box>
+        {!isFeedbackRoute && (
+          <Box
+            sx={{ display: "flex", width: "100%", justifyContent: "flex-end" }}
+          >
+            <Link
+              to="/feedback"
+              style={{ textDecoration: "none", color: "black" }}
+            >
+              <Typography
+                variant="body2"
+                sx={{
+                  textAlign: "center",
+                  fontWeight: "bold",
+                  backgroundColor: "primary.main",
+                  padding: "0.5rem",
+                  borderRadius: "0.5rem",
+                  color: "white",
+                }}
+              >
+                Give Feedback
+              </Typography>
+            </Link>
+          </Box>
+        )}
+      </Container>
     </nav>
   );
 }

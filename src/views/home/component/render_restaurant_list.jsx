@@ -17,8 +17,8 @@ function RenderRestaurantList({
         dataList={restaurantList}
       />
       <Grid container spacing={2}>
-        {restaurantList?.map((restaurant) => (
-          <Grid item key={restaurant._id}>
+        {restaurantList?.map((restaurant,index) => (
+          <Grid item key={index}>
             <RestaurantCard
               restaurant={restaurant}
               goToShowRestaurantMenuPage={goToShowRestaurantMenuPage}

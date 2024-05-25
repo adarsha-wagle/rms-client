@@ -42,8 +42,6 @@ function CheckoutPopup({ checkedItems, setCheckedItems }) {
     setOpenUserPopup(false);
   };
 
-  console.log("checked item", checkedItems);
-
   const handleOrder = () => {
     const itemIdsAndQuantities = checkedItems.map((item) => ({
       itemId: item.itemId,

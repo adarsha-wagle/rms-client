@@ -8,8 +8,6 @@ function SecondSectionFoodList({
   checkedItems,
   setCheckedItems,
 }) {
-  console.log(selectedCategoryFoodList);
-
   if (selectedCategoryFoodList?.length === 0) {
     return (
       <Box>
@@ -17,8 +15,6 @@ function SecondSectionFoodList({
       </Box>
     );
   }
-
-  console.log("selected category food list", selectedCategoryFoodList);
 
   return (
     <div>

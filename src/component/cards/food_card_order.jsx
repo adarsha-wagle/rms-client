@@ -43,8 +43,6 @@ function FoodCardOrder({
     setExpanded(!expanded);
   };
 
-  console.log("item id", itemId);
-
   const handleToggleItem = () => {
     if (isItemChecked) {
       // If the item is already checked, remove it

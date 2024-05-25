@@ -32,7 +32,6 @@ function FirstSectionCategories({ setSelectedCategoryFoodList }) {
   useEffect(() => {
     if (categoryList) {
       setSelectedCategory(categoryList[0]?.name);
-      console.log(categoryList[0]);
       setSelectedCategoryFoodList(categoryList[0]?.items);
     }
   }, [categoryList]);

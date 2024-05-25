@@ -34,7 +34,6 @@ export const navSlice = createSlice({
       state.orderedStatus = action.payload;
     },
     setCustomerPhoneNumber: (state, action) => {
-      console.log("action", action);
       state.customerPhoneNumber = action.payload;
     },
   },

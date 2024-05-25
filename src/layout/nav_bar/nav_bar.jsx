@@ -13,7 +13,6 @@ function NavBar() {
     dispatch(fetchOrderStatusAsync());
     if (orderedStatus) {
       const intervalId = setInterval(() => {
-        console.log("calling order status");
         dispatch(fetchOrderStatusAsync());
       }, 5000);
 

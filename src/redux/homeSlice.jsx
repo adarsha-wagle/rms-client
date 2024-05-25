@@ -17,7 +17,6 @@ export const fetchRestaurantListAsync = createAsyncThunk(
     if (searchQuery) url += `?search=${searchQuery}`;
     try {
       const response = await axios.get(`${url}`);
-      console.log(response);
       if (response.status === 200) {
         return response.data;
       }
@@ -28,7 +27,7 @@ export const fetchRestaurantListAsync = createAsyncThunk(
     }
   }
 );
-export const homeSlice = createSlice({
+const homeSlice = createSlice({
   name: "home",
   initialState,
   extraReducers: (builder) => {

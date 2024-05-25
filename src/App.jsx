@@ -10,6 +10,7 @@ import { Flip, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 import "./App.css";
+import "react-toastify/dist/ReactToastify.css";
 
 import RootLayout from "src/layout/root_layout";
 
@@ -18,6 +19,7 @@ import RestaurantShowMenuPage from "./pages/restaurant/restaurant_show_menu_page
 import HomePage from "src/pages/home_page";
 import useLocalStorage from "./hooks/useLocalStorage";
 import { setCustomerPhoneNumber } from "./redux/navSlice";
+import FeedbackPage from "./pages/feedback_page";
 
 function App() {
   const dispatch = useDispatch();
@@ -31,6 +33,7 @@ function App() {
     createRoutesFromElements(
       <Route path="/" element={<RootLayout />}>
         <Route index element={<HomePage />} />
+        <Route path="feedback" element={<FeedbackPage />} />
         <Route path="restaurant">
           <Route
             path="order/:userName/:tableNumber"
